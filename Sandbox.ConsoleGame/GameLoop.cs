@@ -8,11 +8,13 @@ namespace Sandbox.ConsoleGame
 
         private int _loopCount;
         private DateTime _started = DateTime.Now;
+        private Game _game;
 
-        public GameLoop(IUserInterface userInterface)
+        public GameLoop(IUserInterface userInterface, Game game)
         {
             _userInterface = userInterface;
             _loopCount = 0;
+            _game = game;
         }
 
         public void HandleUserInput()
@@ -31,11 +33,13 @@ namespace Sandbox.ConsoleGame
         {
             if (stateInfo is null) throw new ArgumentNullException(nameof(stateInfo));
 
-            Game.DisplayBuffer.Clear();
-            Game.DisplayFrames.ForEach(frame => Game.DisplayBuffer.Append(frame));
+            _game.DisplayBuffer.Clear();
+            _game.DisplayFrames.ForEach(frame => _game.DisplayBuffer.Append(frame));
 
             _userInterface.Clear();
-            _userInterface.Print(Game.DisplayBuffer.ToString());
+            _userInterface.Print(_game.DisplayBuffer.ToString());
+
+            _userInterface.UpdateTitle(_loopCount++.ToString());
         }
     }
 }

@@ -1,4 +1,4 @@
 ﻿using Sandbox.ConsoleGame;
 
-var game = new Game(20, 10);
+var game = new Game(50, 25);
 game.Start();

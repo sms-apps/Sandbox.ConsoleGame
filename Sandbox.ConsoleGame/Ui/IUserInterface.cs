@@ -2,6 +2,9 @@
 {
     public interface IUserInterface
     {
+        /// <summary> Clear the UI. </summary>
+        void Clear();
+
         /// <summary> Print out message. </summary>
         /// <param name="message">Message to print.</param>
         /// <param name="newline">Print a newline after the message?</param>
@@ -11,7 +14,9 @@
         /// <remarks>Currently only available on Windows.</remarks>
         void Resize(int x, int y);
 
-        /// <summary> Clear the UI. </summary>
-        void Clear();
+        /// <summary> Update the title of the window. </summary>
+        /// <param name="title">New title.</param>
+        void UpdateTitle(string title);
+
     }
 }

@@ -13,8 +13,8 @@ namespace Sandbox.ConsoleGame
         public int TimerCallbackDelayMs = Constants.DefaultTimerCallbackDelayMs;
         public int TimerCallbackIntervalWaitMs = Constants.DefaultTimerCallbackIntervalWaitMs;
 
-        public static List<string> DisplayFrames { get; set; }
-        public static StringBuilder DisplayBuffer { get; set; }
+        public List<string> DisplayFrames { get; set; }
+        public StringBuilder DisplayBuffer { get; set; }
         public int Height { get; set; } = Constants.DefaultGameFieldHeight;
         public int Width { get; set; } = Constants.DefaultGameFieldWidth;
 
@@ -39,7 +39,7 @@ namespace Sandbox.ConsoleGame
 
             // set up the user interface
             var ui = userInterface ?? new ConsoleUserInterface(Width, Height);
-            _gameLoop = new GameLoop(ui);
+            _gameLoop = new GameLoop(ui, this);
 
             // set up the timer reset
             _autoResetEvent = new AutoResetEvent(false);

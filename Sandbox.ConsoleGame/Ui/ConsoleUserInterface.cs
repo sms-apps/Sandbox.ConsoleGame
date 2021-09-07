@@ -22,6 +22,7 @@ namespace Sandbox.ConsoleGame.Ui
                 Console.SetWindowSize(1, 1);
                 Console.SetBufferSize(x, y);
                 Console.SetWindowSize(x, y);
+
             }
         }
 
@@ -31,5 +32,9 @@ namespace Sandbox.ConsoleGame.Ui
             if (newline) Console.WriteLine(message);
             else Console.Write(message);
         }
+
+        /// <inheritdoc cref="IUserInterface"/>
+        public void UpdateTitle(string title) =>
+            Console.Title = title;
     }
 }
