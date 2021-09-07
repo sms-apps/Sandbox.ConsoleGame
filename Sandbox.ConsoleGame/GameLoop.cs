@@ -31,11 +31,11 @@ namespace Sandbox.ConsoleGame
         {
             if (stateInfo is null) throw new ArgumentNullException(nameof(stateInfo));
 
-            GameState.DisplayBuffer.Clear();
-            GameState.DisplayFrames.ForEach(frame => GameState.DisplayBuffer.Append(frame));
+            Game.DisplayBuffer.Clear();
+            Game.DisplayFrames.ForEach(frame => Game.DisplayBuffer.Append(frame));
 
             _userInterface.Clear();
-            _userInterface.Print(GameState.DisplayBuffer.ToString());
+            _userInterface.Print(Game.DisplayBuffer.ToString());
         }
     }
 }
