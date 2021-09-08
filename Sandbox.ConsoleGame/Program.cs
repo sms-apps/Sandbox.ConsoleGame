@@ -1,4 +1,5 @@
-﻿using Sandbox.ConsoleGame;
+﻿using Sandbox.ConsoleGame.Engine;
 
-var game = new Game(50, 25);
+var settings = GameSettings.Create(50, 25, '.', '*', Location.Create(25, 12));
+var game = new Game(settings);
 game.Start();

@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace Sandbox.ConsoleGame.Ui
+namespace Sandbox.ConsoleGame.Engine.Ui
 {
     public class ConsoleUserInterface : IUserInterface
     {

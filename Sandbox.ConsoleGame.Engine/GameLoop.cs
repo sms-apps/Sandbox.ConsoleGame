@@ -1,6 +1,6 @@
-﻿using Sandbox.ConsoleGame.Ui;
+﻿using Sandbox.ConsoleGame.Engine.Ui;
 
-namespace Sandbox.ConsoleGame
+namespace Sandbox.ConsoleGame.Engine
 {
     public class GameLoop
     {
@@ -33,13 +33,10 @@ namespace Sandbox.ConsoleGame
         {
             if (stateInfo is null) throw new ArgumentNullException(nameof(stateInfo));
 
-            _game.DisplayBuffer.Clear();
-            _game.DisplayFrames.ForEach(frame => _game.DisplayBuffer.Append(frame));
+            // todo - something with stateInfo?
+            // todo - hook up events for "prerender" and "postrender" and call them here somewhere
 
-            _userInterface.Clear();
-            _userInterface.Print(_game.DisplayBuffer.ToString());
-
-            _userInterface.UpdateTitle(_loopCount++.ToString());
+            _game.DisplayRender();
         }
     }
 }

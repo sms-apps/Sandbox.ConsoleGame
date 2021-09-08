@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace Sandbox.ConsoleGame.Core
+namespace Sandbox.ConsoleGame.Engine.Core
 {
     static class StringExtensions
     {

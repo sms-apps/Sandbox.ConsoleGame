@@ -1,4 +1,4 @@
-﻿namespace Sandbox.ConsoleGame
+﻿namespace Sandbox.ConsoleGame.Engine
 {
     public class Constants
     {
